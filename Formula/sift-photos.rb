@@ -25,14 +25,13 @@ class SiftPhotos < Formula
 
   def caveats
     <<~EOS
-      To make Sift available in Spotlight and Launchpad, run:
-        mkdir -p ~/Applications && ln -sf #{prefix}/Sift.app ~/Applications/Sift.app
+      To add Sift to Spotlight and Launchpad, run:
+        cp -R #{prefix}/Sift.app ~/Applications/
+        open ~/Applications/Sift.app
 
       Usage:
         sift-photos ~/Pictures/vacation
-
-      Or open the app:
-        open #{prefix}/Sift.app --args ~/Pictures/vacation
+        open ~/Applications/Sift.app --args ~/Pictures/vacation
     EOS
   end
 
