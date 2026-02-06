@@ -23,22 +23,16 @@ class SiftPhotos < Formula
     bin.install ".build/release/Sift" => "sift-photos"
   end
 
-  def post_install
-    # Symlink to ~/Applications so Spotlight and Launchpad can find it
-    user_apps = Pathname.new(Dir.home)/"Applications"
-    user_apps.mkpath
-    ln_sf prefix/"Sift.app", user_apps/"Sift.app"
-  end
-
   def caveats
     <<~EOS
-      Sift.app has been linked to ~/Applications for Spotlight and Launchpad.
+      To make Sift available in Spotlight and Launchpad, run:
+        mkdir -p ~/Applications && ln -sf #{prefix}/Sift.app ~/Applications/Sift.app
 
       Usage:
         sift-photos ~/Pictures/vacation
 
       Or open the app:
-        open ~/Applications/Sift.app --args ~/Pictures/vacation
+        open #{prefix}/Sift.app --args ~/Pictures/vacation
     EOS
   end
 
