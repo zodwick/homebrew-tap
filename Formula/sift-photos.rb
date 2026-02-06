@@ -1,8 +1,8 @@
 class SiftPhotos < Formula
   desc "Fast photo/video triage for macOS"
   homepage "https://github.com/zodwick/sift"
-  url "https://github.com/zodwick/sift/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "94b26eb4209a5a97dc6632d98e0582eb075acd9247500233672c3125d6986572"
+  url "https://github.com/zodwick/sift/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "97342894baff8ac718bad9ae865cbe14b98018638baccfeeb0f591cc1c554587"
   license "MIT"
 
   depends_on :macos
