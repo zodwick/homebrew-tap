@@ -1,4 +1,4 @@
-class Sift < Formula
+class SiftPhotos < Formula
   desc "Fast photo/video triage for macOS"
   homepage "https://github.com/zodwick/sift"
   url "https://github.com/zodwick/sift/archive/refs/tags/v0.1.0.tar.gz"
@@ -20,8 +20,8 @@ class Sift < Formula
     cp "Sources/Sift/Info.plist", app_dir/"Info.plist"
     cp "Sources/Sift/AppIcon.icns", app_dir/"Resources/AppIcon.icns"
 
-    # Also install the binary directly so `sift` works from CLI
-    bin.install ".build/release/Sift" => "sift"
+    # CLI binary
+    bin.install ".build/release/Sift" => "sift-photos"
   end
 
   def post_install
@@ -36,7 +36,7 @@ class Sift < Formula
       Sift.app has been linked to ~/Applications for Spotlight and Launchpad.
 
       Usage:
-        sift ~/Pictures/vacation
+        sift-photos ~/Pictures/vacation
 
       Or open the app:
         open ~/Applications/Sift.app --args ~/Pictures/vacation
@@ -44,6 +44,6 @@ class Sift < Formula
   end
 
   test do
-    assert_predicate bin/"sift", :executable?
+    assert_predicate bin/"sift-photos", :executable?
   end
 end
